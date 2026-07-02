@@ -6,7 +6,7 @@ import logging
 from datetime import datetime, time as dtime, timedelta
 from zoneinfo import ZoneInfo
 import re
-from duckduckgo_search import DDGS
+from ddgs import DDGS
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, ContextTypes, filters
 

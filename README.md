@@ -29,7 +29,7 @@ A private Telegram bot that runs a local LLM via [Ollama](https://ollama.com) on
 - **Python 3.11+**
 - [`python-telegram-bot`](https://github.com/python-telegram-bot/python-telegram-bot) — Telegram Bot API wrapper with job queue
 - [`requests`](https://docs.python-requests.org/) — Ollama HTTP API calls
-- [`duckduckgo-search`](https://github.com/deedy5/duckduckgo_search) — privacy-respecting web search
+- [`ddgs`](https://github.com/deedy5/ddgs) — privacy-respecting web search
 - **Ollama** — local LLM inference server
 
 ## Setup
@@ -47,7 +47,7 @@ A private Telegram bot that runs a local LLM via [Ollama](https://ollama.com) on
 ```bash
 git clone https://github.com/your-username/ollama-bot.git
 cd ollama-bot
-pip install "python-telegram-bot[job-queue]" requests duckduckgo-search
+pip install "python-telegram-bot[job-queue]" requests ddgs
 ```
 
 2. Create a `.env` file:
