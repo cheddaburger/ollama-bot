@@ -180,9 +180,10 @@ async def morning_briefing(context: ContextTypes.DEFAULT_TYPE) -> None:
         f"weather forecast{city_suffix} today",
     ]
 
+    loop = asyncio.get_running_loop()
     parts = []
     for q in queries:
-        result = web_search(q, max_results=3)
+        result = await loop.run_in_executor(None, web_search, q, 3)
         if result:
             parts.append(result)
 
@@ -232,7 +233,8 @@ async def cmd_search(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None
         await update.message.reply_text("Usage: /search <your query>")
         return
     await context.bot.send_chat_action(chat_id=update.effective_chat.id, action="typing")
-    results = web_search(query, max_results=5)
+    loop = asyncio.get_running_loop()
+    results = await loop.run_in_executor(None, web_search, query, 5)
     if results:
         await update.message.reply_text(f"Results for: {query}\n\n{results}")
     else:
