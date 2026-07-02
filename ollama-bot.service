@@ -1,0 +1,16 @@
+[Unit]
+Description=Ollama Telegram Bot
+After=network-online.target ollama.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=chedda
+WorkingDirectory=/home/chedda/ollama-bot
+EnvironmentFile=/home/chedda/ollama-bot/.env
+ExecStart=/usr/bin/python3 /home/chedda/ollama-bot/bot.py
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
