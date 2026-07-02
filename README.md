@@ -47,7 +47,7 @@ A private Telegram bot that runs a local LLM via [Ollama](https://ollama.com) on
 ```bash
 git clone https://github.com/your-username/ollama-bot.git
 cd ollama-bot
-pip install python-telegram-bot[job-queue] requests duckduckgo-search
+pip install "python-telegram-bot[job-queue]" requests duckduckgo-search
 ```
 
 2. Create a `.env` file:
